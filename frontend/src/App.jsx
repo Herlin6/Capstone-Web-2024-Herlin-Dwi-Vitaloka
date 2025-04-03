@@ -15,7 +15,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Protector } from "./helpers";
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export default function App() {
   window.addEventListener('scroll', function () {
     var header = document.querySelector('nav');
