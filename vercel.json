@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "frontend/package.json",
-      "use": "@vercel/next"
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
