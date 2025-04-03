@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "borrowing_lists",
+  "info": {
+    "singularName": "borrowing-list",
+    "pluralName": "borrowing-lists",
+    "displayName": "Borrowing List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "book": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book.book",
+      "inversedBy": "borrowing_lists"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

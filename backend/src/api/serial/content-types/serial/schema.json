@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "serials",
+  "info": {
+    "singularName": "serial",
+    "pluralName": "serials",
+    "displayName": "Serial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serial": {
+      "type": "string"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::book.book",
+      "mappedBy": "serial"
+    }
+  }
+}

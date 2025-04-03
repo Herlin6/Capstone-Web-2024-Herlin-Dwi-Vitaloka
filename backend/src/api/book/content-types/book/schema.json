@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "synopsis": {
+      "type": "text"
+    },
+    "release": {
+      "type": "date"
+    },
+    "rate": {
+      "type": "decimal",
+      "max": 5,
+      "required": false,
+      "unique": false,
+      "min": 0
+    },
+    "serial": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::serial.serial",
+      "inversedBy": "books"
+    },
+    "borrowing_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::borrowing-list.borrowing-list",
+      "mappedBy": "book"
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::genre.genre",
+      "inversedBy": "books"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "books"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "books"
+    }
+  }
+}
